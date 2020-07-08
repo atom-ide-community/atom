@@ -136,7 +136,7 @@
     "package-generator": "https://www.atom.io/api/packages/package-generator/versions/1.3.0/tarball",
     "pathwatcher": "8.1.0",
     "postcss": "5.2.4",
-    "postcss-selector-parser": "2.2.1",
+    "postcss-selector-parser": "6.0.2",
     "prebuild-install": "^5.3.3",
     "property-accessors": "^1.1.3",
     "random-words": "0.0.1",
