@@ -1,5 +1,5 @@
 jobs:
-  - job: Windows_Build
+  - job: Windows
     dependsOn: GetReleaseVersion
     timeoutInMinutes: 180
     strategy:
