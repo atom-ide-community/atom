@@ -71,7 +71,7 @@ jobs:
               condition: and(succeeded(), eq(variables['IsReleaseBranch'], 'true'))
 
   - job: Windows_RendererTests
-    dependsOn: Windows_Build
+    dependsOn: Windows
     timeoutInMinutes: 180
     strategy:
       maxParallel: 2
