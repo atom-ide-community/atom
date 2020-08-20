@@ -1890,4 +1890,20 @@ describe('PackageManager', () => {
       });
     });
   });
+
+  describe('symlinked package', () => {
+    const packageSymLinkedPath = path.join(
+      __dirname,
+      'fixtures',
+      'packages',
+      'package-symlinked'
+    );
+    fs.symlinkSync(
+      packageSymLinkedPath,
+      path.join(atom.packages.getPackageDirPaths()[0], 'package-symlinked'),
+      'junction'
+    );
+    const availablePackages = atom.packages.getAvailablePackages();
+    expect(availablePackages.includes('package-symlinked')).toBe(true);
+  });
 });
