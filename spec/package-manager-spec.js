@@ -1896,6 +1896,7 @@ describe('PackageManager', () => {
       __dirname,
       'fixtures',
       'packages',
+      'folder',
       'package-symlinked'
     );
     fs.symlinkSync(
