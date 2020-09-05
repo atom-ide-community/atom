@@ -16,6 +16,7 @@ require('colors')
 
 const path = require('path')
 const yargs = require('yargs')
+const { generatePackageJsonWithTracking } = require("version-tracker")
 const argv = yargs
   .usage('Usage: $0 [options]')
   .help('help')
@@ -157,5 +158,8 @@ if (!argv.generateApiDocs) {
       } else {
         console.log('Skipping installation. Specify the --install option to install Atom'.gray)
       }
+    }).then(()=>{
+        // record the versions of binaries that were used to create the successful build
+        generatePackageJsonWithTracking()
     })
 }
