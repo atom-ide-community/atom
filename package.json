@@ -295,7 +295,6 @@
             "npm": "6.14.6",
             "xcode": "Xcode 9.2\nBuild version 9C40b",
             "clang": "Apple LLVM version 9.0.0 (clang-900.0.39.2)\nTarget: x86_64-apple-darwin16.7.0\nThread model: posix\nInstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin",
-            "visual studio": null,
             "apm": "apm  2.5.0\nnpm  6.14.5\nnode 10.20.1 x64\natom 1.51.0-dev-4a9d56f52\npython 3.7.7\ngit 2.27.0",
             "powershell": "PowerShell 6.2.3",
             "python": "Python 3.7.7",
@@ -335,12 +334,6 @@
         "versionCommand": [
           "clang",
           "--version"
-        ]
-      },
-      {
-        "name": "visual studio",
-        "versionCommand": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Installer\\vswhere.exe"
         ]
       },
       {
