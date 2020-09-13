@@ -1,6 +1,6 @@
 'use strict';
 
-const fs = require('fs-extra');
+const rimrafDir = require('@lerna/rimraf-dir');
 const os = require('os');
 const path = require('path');
 
@@ -20,9 +20,11 @@ module.exports = function() {
     path.join(os.tmpdir(), 'atom-build'),
     path.join(os.tmpdir(), 'atom-cached-atom-shells')
   ];
-
+  const rmPromises = [];
   for (let path of cachePaths) {
     console.log(`Cleaning ${path}`);
-    fs.removeSync(path);
+    rmPromises.push(rimrafDir(path));
   }
+
+  return Promise.all(rmPromises);
 };

@@ -7,26 +7,28 @@ module.exports = function() {
   // because they are third party modules. This is okay because cleaning
   // dependencies only makes sense if dependencies have been installed at least
   // once.
-  const fs = require('fs-extra');
+  const rimrafDir = require('@lerna/rimraf-dir');
   const glob = require('glob');
+
+  const rmPromises = [];
 
   const apmDependenciesPath = path.join(CONFIG.apmRootPath, 'node_modules');
   console.log(`Cleaning ${apmDependenciesPath}`);
-  fs.removeSync(apmDependenciesPath);
+  rmPromises.push(rimrafDir(apmDependenciesPath));
 
   const atomDependenciesPath = path.join(
     CONFIG.repositoryRootPath,
     'node_modules'
   );
   console.log(`Cleaning ${atomDependenciesPath}`);
-  fs.removeSync(atomDependenciesPath);
+  rmPromises.push(rimrafDir(atomDependenciesPath));
 
   const scriptDependenciesPath = path.join(
     CONFIG.scriptRootPath,
     'node_modules'
   );
   console.log(`Cleaning ${scriptDependenciesPath}`);
-  fs.removeSync(scriptDependenciesPath);
+  rmPromises.push(rimrafDir(scriptDependenciesPath));
 
   const bundledPackageDependenciesPaths = path.join(
     CONFIG.repositoryRootPath,
@@ -37,6 +39,8 @@ module.exports = function() {
   for (const bundledPackageDependencyPath of glob.sync(
     bundledPackageDependenciesPaths
   )) {
-    fs.removeSync(bundledPackageDependencyPath);
+    rmPromises.push(rimrafDir(bundledPackageDependencyPath));
   }
+
+  return Promise.all(rmPromises);
 };
