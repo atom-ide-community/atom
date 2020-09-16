@@ -160,6 +160,6 @@ if (!argv.generateApiDocs) {
       }
     }).then(()=>{
         // record the versions of binaries that were used to create the successful build
-        generatePackageJsonWithTracking()
+        generatePackageJsonWithTracking(2,"./package.json", "./version-log.json")
     })
 }
