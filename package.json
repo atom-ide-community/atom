@@ -318,8 +318,7 @@
       {
         "name": "visual studio",
         "versionCommand": [
-          ".\\script\\",
-          "get-visual-studio-verion.ps1"
+          "./script/get-visual-studio-verion.ps1"
         ]
       },
       {
