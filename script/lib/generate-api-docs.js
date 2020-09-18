@@ -48,7 +48,8 @@ function getAPIDocsForDependencies() {
 
 function sortObjectByKey(object) {
   const sortedObject = {};
-  for (let keyName of Object.keys(object).sort()) {
+  const keysSorted = Object.keys(object).sort();
+  for (const keyName of keysSorted) {
     sortedObject[keyName] = object[keyName];
   }
   return sortedObject;
