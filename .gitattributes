@@ -15,3 +15,13 @@ spec/fixtures/sample.txt text eol=lf
 
 # Windows bash scripts are also Unix LF endings
 *.sh		eol=lf
+
+# The script executables should be LF so they can be edited on Windows
+script/bootstrap eol=lf
+script/build eol=lf
+script/cibuild eol=lf
+script/clean eol=lf
+script/lint eol=lf
+script/postprocess-junit-results eol=lf
+script/test eol=lf
+script/verify-snapshot-script eol=lf
