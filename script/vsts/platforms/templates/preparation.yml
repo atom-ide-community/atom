@@ -4,7 +4,7 @@ steps:
   - script: |
       sudo apt-get update
       sudo apt-get install -y wget software-properties-common
-      sudo apt-get install -y build-essential ca-certificates xvfb fakeroot git libsecret-1-dev rpm libx11-dev libxkbfile-dev xz-utils xorriso zsync libxss1 libgconf2-4 libgtk-3-0 libasound2 libicu-dev
+      sudo apt-get install -y build-essential ca-certificates xvfb fakeroot git libsecret-1-dev rpm libx11-dev libxkbfile-dev xz-utils xorriso zsync libxss1 libgconf2-4 libgtk-3-0 libasound2 libicu-dev dpkg
       # clang 9 is included in the image
       sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-9 10
       sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-9 10
@@ -34,7 +34,7 @@ steps:
     env:
       GITHUB_TOKEN: $(GITHUB_TOKEN)
     displayName: Install script/vsts dependencies
-    condition: or(eq(variables['Agent.OS'], 'Windows_NT'), eq(variables['IsReleaseBranch'], 'true'), eq(variables['IsNightlyBranch'], 'true'))
+    condition: or(eq(variables['Agent.OS'], 'Windows_NT'), eq(variables['IsReleaseBranch'], 'true'), eq(variables['IsSignedZipBranch'], true), eq(variables['IsNightlyBranch'], 'true'))
 
   # Windows Specific
   - task: UsePythonVersion@0

@@ -31,6 +31,11 @@ const appName = getAppName(channel);
 const executableName = getExecutableName(channel, appName);
 const channelName = getChannelName(channel);
 
+const REPO_OWNER = process.env.REPO_OWNER || 'atom';
+const MAIN_REPO = process.env.MAIN_REPO || 'atom';
+const NIGHTLY_RELEASE_REPO =
+  process.env.NIGHTLY_RELEASE_REPO || 'atom-nightly-releases';
+
 module.exports = {
   appMetadata,
   apmMetadata,
@@ -53,7 +58,10 @@ module.exports = {
   homeDirPath,
   getApmBinPath,
   getNpmBinPath,
-  snapshotAuxiliaryData: {}
+  snapshotAuxiliaryData: {},
+  REPO_OWNER,
+  MAIN_REPO,
+  NIGHTLY_RELEASE_REPO
 };
 
 function getChannelName(channel) {
@@ -126,4 +134,7 @@ function getNpmBinPath(external = false) {
     : npmBinName;
 }
 
-process.env.JOBS = 'max'; // parallel build in node-gyp
+// parallel build in node-gyp
+if (!process.env.JOBS) {
+  process.env.JOBS = 'max';
+}
