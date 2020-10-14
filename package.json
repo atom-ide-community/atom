@@ -163,7 +163,7 @@
     "tree-view": "https://www.atom.io/api/packages/tree-view/versions/0.228.1/tarball",
     "typescript-simple": "8.0.6",
     "update-package-dependencies": "file:./packages/update-package-dependencies",
-    "version-tracker": "^1.2.0",
+    "version-tracker": "^2.0.0",
     "vscode-ripgrep": "1.9.0",
     "welcome": "file:packages/welcome",
     "whitespace": "https://www.atom.io/api/packages/whitespace/versions/0.37.7/tarball",
@@ -288,92 +288,135 @@
     "track": [
       {
         "name": "node",
-        "versionCommand": [
-          "node",
-          "--version"
+        "versionCommands": [
+          [
+            "node",
+            "--version"
+          ]
         ]
       },
       {
         "name": "npm",
-        "versionCommand": [
-          "npm",
-          "-v"
+        "versionCommands": [
+          [
+            "npm",
+            "-v"
+          ]
         ]
       },
       {
         "name": "xcode",
-        "versionCommand": [
-          "/usr/bin/xcodebuild",
-          "-version"
+        "versionCommands": [
+          [
+            "/usr/bin/xcodebuild",
+            "-version"
+          ]
         ]
       },
       {
         "name": "clang",
-        "versionCommand": [
-          "clang",
-          "--version"
+        "versionCommands": [
+          [
+            "clang",
+            "--version"
+          ]
         ]
       },
       {
         "name": "visual studio",
-        "versionCommand": [
-          "./script/get-visual-studio-verion.ps1"
+        "versionCommands": [
+          [
+            "powershell",
+            ".\\script\\get-visual-studio-verion.ps1"
+          ],
+          [
+            "powershell",
+            "./script/get-visual-studio-verion.ps1"
+          ],
+          [
+            "pwsh",
+            ".\\script\\get-visual-studio-verion.ps1"
+          ],
+          [
+            "pwsh",
+            "./script/get-visual-studio-verion.ps1"
+          ]
         ]
       },
       {
         "name": "apm",
-        "versionCommand": [
-          "apm",
-          "-v"
+        "versionCommands": [
+          [
+            "apm",
+            "-v"
+          ]
         ]
       },
       {
         "name": "powershell",
-        "versionCommand": [
-          "powershell",
-          "--version"
+        "versionCommands": [
+          [
+            "powershell",
+            "--version"
+          ],
+          [
+            "pwsh",
+            "--version"
+          ]
         ]
       },
       {
         "name": "python",
-        "versionCommand": [
-          "python",
-          "--version"
+        "versionCommands": [
+          [
+            "python",
+            "--version"
+          ]
         ]
       },
       {
         "name": "python2",
-        "versionCommand": [
-          "python2",
-          "--version"
+        "versionCommands": [
+          [
+            "python2",
+            "--version"
+          ]
         ]
       },
       {
         "name": "python3",
-        "versionCommand": [
-          "python3",
-          "--version"
+        "versionCommands": [
+          [
+            "python3",
+            "--version"
+          ]
         ]
       },
       {
         "name": "zsh",
-        "versionCommand": [
-          "zsh",
-          "--version"
+        "versionCommands": [
+          [
+            "zsh",
+            "--version"
+          ]
         ]
       },
       {
         "name": "bash",
-        "versionCommand": [
-          "bash",
-          "--version"
+        "versionCommands": [
+          [
+            "bash",
+            "--version"
+          ]
         ]
       },
       {
         "name": "git",
-        "versionCommand": [
-          "git",
-          "--version"
+        "versionCommands": [
+          [
+            "git",
+            "--version"
+          ]
         ]
       }
     ]
