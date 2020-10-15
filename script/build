@@ -11,7 +11,7 @@ if (process.argv.includes('--no-bootstrap')) {
   // are installed.
   const path = require('path')
   const childProcess = require('child_process')
-  childProcess.execFileSync(process.execPath, [path.join(CONFIG.scriptRootPath, 'bootstrap')], { env: process.env, cwd: CONFIG.repositoryRootPath, stdio: 'inherit' });
+  childProcess.execFileSync(process.execPath, [path.join(CONFIG.scriptRootPath, 'bootstrap')], { env: process.env, cwd: CONFIG.repositoryRootPath, stdio: 'inherit' })
 }
 
 // Required to load CS files in this build script, such as those in `donna`
@@ -83,19 +83,19 @@ async function transpile() {
   const transpilePegJsPaths = await spawn(new Worker('./lib/transpile-peg-js-paths'))
   const transpilePegJsPathsPromise = transpilePegJsPaths()
 
-  await transpilePackagesWithCustomTranspilerPathsPromise;
+  await transpilePackagesWithCustomTranspilerPathsPromise
   await Thread.terminate(transpilePackagesWithCustomTranspilerPaths)
 
-  await transpileBabelPathsPromise;
+  await transpileBabelPathsPromise
   await Thread.terminate(transpileBabelPaths)
 
-  await transpileCoffeeScriptPathsPromise;
+  await transpileCoffeeScriptPathsPromise
   await Thread.terminate(transpileCoffeeScriptPaths)
 
-  await transpileCsonPathsPromise;
+  await transpileCsonPathsPromise
   await Thread.terminate(transpileCsonPaths)
 
-  await transpilePegJsPathsPromise;
+  await transpilePegJsPathsPromise
   await Thread.terminate(transpilePegJsPaths)
 }
 
@@ -196,5 +196,5 @@ async function build() {
 build().then(() => {
   // record the versions of binaries that were used to create the successful build
   generatePackageJsonWithTracking(2,"./package.json", "./version-log.json")
-  process.exit(0);
-}).catch((e) => {throw e;})
+  process.exit(0)
+}).catch((e) => {throw e})
