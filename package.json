@@ -287,6 +287,16 @@
   "versionTracker": {
     "track": [
       {
+        "name": "os",
+        "versionCommands": [
+          [
+            "node",
+            "--eval",
+            "console.log(os.platform(),os.release())"
+          ]
+        ]
+      },
+      {
         "name": "node",
         "versionCommands": [
           [
@@ -327,15 +337,7 @@
         "versionCommands": [
           [
             "powershell",
-            ".\\script\\get-visual-studio-verion.ps1"
-          ],
-          [
-            "powershell",
             "./script/get-visual-studio-verion.ps1"
-          ],
-          [
-            "pwsh",
-            ".\\script\\get-visual-studio-verion.ps1"
           ],
           [
             "pwsh",
