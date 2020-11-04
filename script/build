@@ -196,6 +196,6 @@ async function build() {
 
 build().then(() => {
   // record the versions of binaries that were used to create the successful build
-  generatePackageJsonWithTracking(2,"./package.json", "./version-log.json")
+  generatePackageJsonWithTracking({indent: 2, source: "./package.json", log: "./version-log.json"})
   process.exit(0)
 }).catch((e) => {throw e})
