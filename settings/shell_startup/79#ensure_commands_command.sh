@@ -2,6 +2,6 @@
 if ! [[ -f "./settings/commands/commands" ]]; then
     echo "#!/usr/bin/env bash
     echo \"project commands:\"
-    ls -1 ./commands | sed 's/^/    /'
+    ls -1 ./settings/commands | sed 's/^/    /'
     " > "./settings/commands/commands"
 fi

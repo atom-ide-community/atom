@@ -17,3 +17,5 @@ rm -rfv ./settings/.cache **/*.cleanable **/*.cleanable.*
 
 # python cache at any level (half second to rebuild these)
 rm -rf **/__pycache__
+
+./script/clean

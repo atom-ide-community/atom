@@ -16,7 +16,7 @@ then
 fi
 
 # clean all the small things
-./commands/clean
+./settings/commands/clean
 
 # all the virtual env pip modules (several minutes to rebuild these)
 rm -rfv .venv
